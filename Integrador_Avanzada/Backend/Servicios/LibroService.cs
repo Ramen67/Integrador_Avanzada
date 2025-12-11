@@ -99,17 +99,19 @@ namespace Integrador_Avanzada.Backend.Servicios
                 string sql = "SELECT * FROM libros"; // Trae todas las columnas
 
                 using (var cmd = new SqlCommand(sql, conn))
-                using (var reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        libros.Add(new LibroModel
+                        while (reader.Read())
                         {
-                            libroId = reader.GetInt32(reader.GetOrdinal("libro_id")),
-                            libroTitulo = reader.GetString(reader.GetOrdinal("titulo")),
-                            libroISBN = reader.GetString(reader.GetOrdinal("isbn")),
-                            libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion"))
-                        });
+                            libros.Add(new LibroModel
+                            {
+                                libroId = reader.GetInt32(reader.GetOrdinal("libro_id")),
+                                libroTitulo = reader.GetString(reader.GetOrdinal("titulo")),
+                                libroISBN = reader.GetString(reader.GetOrdinal("isbn")),
+                                libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion"))
+                            });
+                        }
                     }
                 }
             }
