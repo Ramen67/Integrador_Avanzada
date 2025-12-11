@@ -35,7 +35,7 @@ namespace Integrador_Avanzada
             this.Close();
             irPrestamo.Show();
         }
-
+        /*
         private void DevolucionBtn_Click(object sender, RoutedEventArgs e)
         {
             Devolucion irDevolucion = new Devolucion();
@@ -62,6 +62,27 @@ namespace Integrador_Avanzada
 
             this.Close();
             irDevolucion.Show();
+        }*/
+
+        private void UsuarioBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario irUsuario = new Usuario();
+            this.Close();
+            irUsuario.Show();
+        }
+
+        private void EjemplarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Ejemplar irEjemplar = new Ejemplar();
+            this.Close();
+            irEjemplar.Show();
+        }
+
+        private void LibroBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Libro irLibro = new Libro();
+            this.Close();
+            irLibro.Show();
         }
     }
 }

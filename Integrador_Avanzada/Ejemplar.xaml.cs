@@ -31,9 +31,32 @@ namespace Integrador_Avanzada
             libroWindow.Show();
         }
 
-        private void EjemplarBtn_Click(object sender, RoutedEventArgs e)
+        private void UsuarioBtn_Click(object sender, RoutedEventArgs e)
         {
+            Usuario usuarioWindow = new Usuario();
+            this.Close();
+            usuarioWindow.Show();
+        }
 
+        private void SancionesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Sanciones sancionesWindow = new Sanciones();
+            this.Close();
+            sancionesWindow.Show();
+        }
+
+        private void PrestamoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Prestamo prestamoWindow = new Prestamo();
+            this.Close();
+            prestamoWindow.Show();
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
         }
     }
 }

@@ -23,5 +23,40 @@ namespace Integrador_Avanzada
         {
             InitializeComponent();
         }
+
+        private void LibroBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Libro irLibro = new Libro();
+            this.Close();
+            irLibro.Show();
+        }
+
+        private void EjemplarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Ejemplar irEjemplar = new Ejemplar();
+            this.Close();
+            irEjemplar.Show();
+        }
+
+        private void SancionesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Sanciones irSanciones = new Sanciones();
+            this.Close();
+            irSanciones.Show();
+        }
+
+        private void PrestamoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Prestamo irPrestamo = new Prestamo();
+            this.Close();
+            irPrestamo.Show();
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow irHome = new MainWindow();
+            this.Close();
+            irHome.Show();
+        }
     }
 }

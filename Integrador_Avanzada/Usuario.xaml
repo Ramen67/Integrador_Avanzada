@@ -11,8 +11,8 @@
         <Button x:Name="PrestamoBtn" Content="Prestamo" HorizontalAlignment="Left" Margin="560,20,0,0" VerticalAlignment="Top"  Height="46" Width="105" FontSize="20" Click="PrestamoBtn_Click" Background="#FFF8AF23"/>
         <Button x:Name="HomeBtn" Content="Home" HorizontalAlignment="Left" Margin="680,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Click="HomeBtn_Click" Background="#FFF8AF23"/>
         <Button x:Name="SancionesBtn" Content="Sanciones" HorizontalAlignment="Left" Margin="440,20,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Click="SancionesBtn_Click" Background="#FFF8AF23" />
-        <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="320,20,0,0" VerticalAlignment="Top" Click="Button_Click" Width="105" Height="46" FontSize="20" Background="#FFF8AF23"/>
-        <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23"/>
+        <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="320,20,0,0" VerticalAlignment="Top" Width="105" Height="46" FontSize="20" Background="#FFF8AF23" Click="EjemplarBtn_Click"/>
+        <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23" Click="LibroBtn_Click"/>
 
     </Grid>
 </Window>
