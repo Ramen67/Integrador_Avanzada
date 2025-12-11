@@ -1,7 +1,7 @@
 ﻿using Integrador_Avanzada.Backend.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient; //cambie esta libreria para que no me tiraran error las lineas con SqlCommand, si les falla cambienlo a System.Data.SqlClient
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace Integrador_Avanzada.Backend.Servicios
 {
     public class SancionService
     {
-        public void AplicarSancion(int prestamoId, int usuarioId, decimal monto)
+        public void AplicarSancion(int prestamoId, int usuarioId, decimal monto) //agrega una sanción a un usuario
         {
             using (var conn = Database.GetConnection())
             {
@@ -32,7 +32,7 @@ namespace Integrador_Avanzada.Backend.Servicios
             }
         }
 
-        public List<SancionModel> ConsultarSanciones(int usuarioId)
+        public List<SancionModel> ConsultarSanciones(int usuarioId) //devuelve todas las sanciones de un usuario en una lista de objetos de tipo sancioon model
         {
             var lista = new List<SancionModel>();
 

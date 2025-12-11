@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Integrador_Avanzada.Backend;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,6 +39,27 @@ namespace Integrador_Avanzada
         private void DevolucionBtn_Click(object sender, RoutedEventArgs e)
         {
             Devolucion irDevolucion = new Devolucion();
+
+            try
+            {
+                using (var con = Database.GetConnection())
+                {
+                    con.Open(); // ← aquí truena si el ConnectionString está mal
+                    MessageBox.Show("Conexión exitosa.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al conectar con la base de datos:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            }
+
+
+
             this.Close();
             irDevolucion.Show();
         }
