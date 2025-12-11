@@ -101,13 +101,18 @@ namespace Integrador_Avanzada.Backend.Servicios
                             libros.titulo,
                             libros.isbn,    
                             libros.anio_publicacion,
-                            autor_libro.autor_id,
-                            libro_editorial.editorial_id
+                            autores.nombre,
+                            editoriales.nombre
                             FROM libros 
                             INNER JOIN autor_libro
                             ON libros.libro_id = autor_libro.libro_id
+                            INNER JOIN autores 
+                            ON autor_libro.autor_id=autores.autor_id
                             INNER JOIN libro_editorial 
-                            ON libros.libro_id = libro_editorial.libro_id"; // Trae todas las columnas
+                            ON libros.libro_id = libro_editorial.libro_id
+                            INNER JOIN editoriales
+                            ON libro_editorial.editorial_id=editoriales.editorial_id;
+"; // Trae todas las columnas
 
                 using (var cmd = new SqlCommand(sql, conn))
                 {
