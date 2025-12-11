@@ -23,6 +23,7 @@
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="530,223,0,0" TextWrapping="Wrap" Text="ID libro:" VerticalAlignment="Top" Width="135" FontSize="16"/>
         <TextBox x:Name="txtLibro" HorizontalAlignment="Left" Margin="530,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="agregarBtn" Content="Agregar autor al libro" HorizontalAlignment="Left" Margin="550,299,0,0" VerticalAlignment="Top" FontSize="18" Click="agregarBtn_Click"/>
+        <Button x:Name="AgregarAutorBtn" Content="Agregar" HorizontalAlignment="Left" Margin="680,363,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23" Click="AgregarAutorBtn_Click"/>
 
     </Grid>
 </Window>

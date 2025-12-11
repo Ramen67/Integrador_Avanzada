@@ -13,7 +13,7 @@ namespace Integrador_Avanzada.Backend.Servicios
         public List<AutorModel> mostrarAutores()
         {
             var lista = new List<AutorModel>();
-            string sql = "SELECT * FROM autores";
+            string sql = "SELECT autor_id, nombre, nacionalidad FROM autores";
             var conn = Database.GetConnection();
             conn.Open();
             using (var cmd = new SqlCommand(sql, conn))
@@ -26,13 +26,31 @@ namespace Integrador_Avanzada.Backend.Servicios
                         {
                             autorId = reader.GetInt32(0),
                             autorName = reader.GetString(1),
-                            nacionalidad = reader.GetString(2),
-                            fechaNacimiento = DateOnly.FromDateTime(reader.GetDateTime(3))
+                            nacionalidad = reader.GetString(2)
                         });
                     }
                 }
             }
             return lista;
+        }
+
+        public void agregarAutores(string nombre, string nacionalidad)
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"
+                        INSERT INTO autores(nombre, nacionalidad)
+                        VALUES (@name, @nacionalidad)";
+
+                using (var cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", nombre);
+                    cmd.Parameters.AddWithValue("@nacionalidad", nacionalidad);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

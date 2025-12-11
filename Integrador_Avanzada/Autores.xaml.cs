@@ -123,5 +123,13 @@ namespace Integrador_Avanzada
             }
             txtLibro.Text= modelo.libroId.ToString();
         }
+
+        private void AgregarAutorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AutoresAgregar autorAgregar = new AutoresAgregar();
+            autorAgregar.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Close();
+            autorAgregar.Show();
+        }
     }
 }

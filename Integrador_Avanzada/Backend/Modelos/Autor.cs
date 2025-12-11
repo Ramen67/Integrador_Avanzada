@@ -11,6 +11,5 @@ namespace Integrador_Avanzada.Backend.Modelos
         public int autorId {  get; set; }
         public string autorName { get; set; }
         public string nacionalidad { get; set; }
-        public DateOnly fechaNacimiento { get; set; }
     }
 }

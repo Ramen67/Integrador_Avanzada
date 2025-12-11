@@ -52,7 +52,7 @@ namespace Integrador_Avanzada.Backend.Servicios
         {
             var libros = new List<LibroModel>();
 
-            using(var conn = Database.GetConnection())
+            using (var conn = Database.GetConnection())
             {
                 conn.Open();
 
@@ -104,13 +104,13 @@ namespace Integrador_Avanzada.Backend.Servicios
                             autores.nombre,
                             editoriales.nombre
                             FROM libros 
-                            INNER JOIN autor_libro
+                            left JOIN autor_libro
                             ON libros.libro_id = autor_libro.libro_id
-                            INNER JOIN autores 
+                            left  JOIN autores 
                             ON autor_libro.autor_id=autores.autor_id
-                            INNER JOIN libro_editorial 
+                            left  JOIN libro_editorial 
                             ON libros.libro_id = libro_editorial.libro_id
-                            INNER JOIN editoriales
+                            left JOIN editoriales
                             ON libro_editorial.editorial_id=editoriales.editorial_id;
 "; // Trae todas las columnas
 
