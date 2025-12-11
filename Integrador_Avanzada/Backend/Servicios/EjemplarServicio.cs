@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,30 @@ namespace Integrador_Avanzada.Backend.Servicios
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+        public List<EjemplarModel> mostrarEjemplares()
+        {
+            var lista = new List<EjemplarModel>();
+            string sql = "SELECT * FROM ejemplares";
+            var conn = Database.GetConnection();
+            conn.Open();
+            using (var cmd = new SqlCommand(sql, conn))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new EjemplarModel
+                        {
+                            ejemplarId = reader.GetInt32(0),
+                            libroId = reader.GetInt32(1),
+                            estado = reader.GetString(2),
+                            numInventario = reader.GetString(3)
+                        });
+                    }
+                }
+            }
+            return lista;
         }
     }
 }

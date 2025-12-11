@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Integrador_Avanzada.Backend.Servicios;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +60,44 @@ namespace Integrador_Avanzada
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
+        }
+
+        private void mostrarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EjemplarServicio servicio = new EjemplarServicio();
+            List<EjemplarModel> modelo = new List<EjemplarModel>();
+            modelo = servicio.mostrarEjemplares();
+            dgEjemplar.ItemsSource = modelo;
+        }
+
+        private void agregarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string numInventario = txtInven.Text;
+            int idLibro;
+            if(string.IsNullOrEmpty(numInventario) || !int.TryParse(txtLibro.Text,out idLibro))
+            {
+                MessageBox.Show("Ingresa valores validos por favor");
+                return;
+            }
+            EjemplarServicio ejemplarServicio = new EjemplarServicio();
+            ejemplarServicio.agregarEjemplar(idLibro, numInventario);
+            MessageBox.Show("Se agrego exitosamente");
+        }
+
+        private void dispoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<EjemplarModel> dispo = new List<EjemplarModel>();
+            EjemplarServicio servicio = new EjemplarServicio();
+            List<EjemplarModel> modelo = new List<EjemplarModel>();
+            modelo = servicio.mostrarEjemplares();
+            var disponible = from disponibles in modelo
+                             where disponibles.estado == "Disponible"
+                             select disponibles;
+            foreach(var disponibles in disponible)
+            {
+                dispo.Add(disponibles);
+            }
+            dgDisponibles.ItemsSource = dispo;
         }
     }
 }
