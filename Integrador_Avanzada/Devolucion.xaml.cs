@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,24 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Integrador_Avanzada
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para Devolucion.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Devolucion : Window
     {
-        public MainWindow()
+        public Devolucion()
         {
             InitializeComponent();
         }
 
         private void SancionesBtn_Click(object sender, RoutedEventArgs e)
         {
-            Sanciones irSanciones = new Sanciones();
+            Sanciones irSanciones  = new Sanciones();
             this.Close();
             irSanciones.Show();
         }
@@ -35,11 +38,11 @@ namespace Integrador_Avanzada
             irPrestamo.Show();
         }
 
-        private void DevolucionBtn_Click(object sender, RoutedEventArgs e)
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Devolucion irDevolucion = new Devolucion();
+            MainWindow Home = new MainWindow();
             this.Close();
-            irDevolucion.Show();
+            Home.Show();
         }
     }
 }

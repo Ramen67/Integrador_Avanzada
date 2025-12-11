@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,26 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Integrador_Avanzada
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para Sanciones.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Sanciones : Window
     {
-        public MainWindow()
+        public Sanciones()
         {
             InitializeComponent();
         }
 
-        private void SancionesBtn_Click(object sender, RoutedEventArgs e)
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Sanciones irSanciones = new Sanciones();
+            MainWindow Home = new MainWindow();
             this.Close();
-            irSanciones.Show();
+            Home.Show();
         }
 
         private void PrestamoBtn_Click(object sender, RoutedEventArgs e)
