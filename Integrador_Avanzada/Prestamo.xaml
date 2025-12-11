@@ -8,9 +8,10 @@
         Title="Prestamo" Height="450" Width="800">
     <Grid>
         <Image HorizontalAlignment="Left" Height="80" Margin="10,8,0,0" VerticalAlignment="Top" Width="75" Source="/Imagenes/libreria.png"/>
-        <Button x:Name="SancionesBtn" Content="Sanciones" HorizontalAlignment="Left" Margin="540,22,0,0" VerticalAlignment="Top"  Height="46" Width="105" FontSize="20" Click="SancionesBtn_Click"/>
-        <Button x:Name="HomeBtn" Content="Home" HorizontalAlignment="Left" Margin="665,22,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Click="HomeBtn_Click"/>
-        <Button x:Name="DevolucionBtn" Content="Devolucion" HorizontalAlignment="Left" Margin="415,21,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Click="DevolucionBtn_Click"/>
-
+        <Button x:Name="PrestamoBtn" Content="Prestamo" HorizontalAlignment="Left" Margin="560,20,0,0" VerticalAlignment="Top"  Height="46" Width="105" FontSize="20" Click="PrestamoBtn_Click" Background="#FFF8AF23"/>
+        <Button x:Name="HomeBtn" Content="Home" HorizontalAlignment="Left" Margin="680,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Click="HomeBtn_Click" Background="#FFF8AF23"/>
+        <Button x:Name="SancionesBtn" Content="Sanciones" HorizontalAlignment="Left" Margin="440,20,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Click="SancionesBtn_Click" Background="#FFF8AF23" />
+        <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="320,20,0,0" VerticalAlignment="Top" Click="Button_Click" Width="105" Height="46" FontSize="20" Background="#FFF8AF23"/>
+        <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23"/>
     </Grid>
 </Window>
