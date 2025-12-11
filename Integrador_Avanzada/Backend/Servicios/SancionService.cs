@@ -32,7 +32,7 @@ namespace Integrador_Avanzada.Backend.Servicios
             }
         }
 
-        public List<SancionModel> ConsultarSanciones(int usuarioId) //devuelve todas las sanciones de un usuario en una lista de objetos de tipo sancioon model
+        public List<SancionModel> ConsultarSanciones(int usuarioId) 
         {
             var lista = new List<SancionModel>();
 

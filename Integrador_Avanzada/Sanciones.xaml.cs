@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Integrador_Avanzada.Backend.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,11 @@ namespace Integrador_Avanzada
     /// </summary>
     public partial class Sanciones : Window
     {
+        
         public Sanciones()
         {
             InitializeComponent();
+            
         }
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
@@ -60,6 +64,39 @@ namespace Integrador_Avanzada
             irUsuario.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irUsuario.Show();
+        }
+
+        private void rPresbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int prestamosId;
+            decimal monto;
+            int usuarioId;
+            if (int.TryParse(txtIdPrestamo.Text, out prestamosId) && decimal.TryParse(txtIdMonto.Text, out monto) && int.TryParse(txtIdUsuario.Text, out usuarioId))
+            {
+                SancionService sancionservice=new SancionService();
+                sancionservice.AplicarSancion(prestamosId, usuarioId, monto);
+                
+                MessageBox.Show("Sancion realizada con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese IDs válidos para el prestamo,  y el usuario.");
+            }
+        }
+       
+
+        private void buscarbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int idUsuario;
+            if (!int.TryParse(txtBusqueda.Text, out idUsuario))
+            {
+                MessageBox.Show("Por favor, ingrese un ID de usuario válido.");
+                return;
+            }
+            SancionService sancionservice = new SancionService();
+            List<SancionModel> sanciones;
+            sanciones = sancionservice.ConsultarSanciones(idUsuario);
+            dgsanc.ItemsSource = sanciones;
         }
     }
 }

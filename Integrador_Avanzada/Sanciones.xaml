@@ -13,5 +13,17 @@
         <Button x:Name="UsuarioBtn" Content="Usuario" HorizontalAlignment="Left" Margin="440,20,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Background="#FFF8AF23" Click="UsuarioBtn_Click" />
         <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="320,20,0,0" VerticalAlignment="Top" Width="105" Height="46" FontSize="20" Background="#FFF8AF23" Click="EjemplarBtn_Click"/>
         <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23" Click="LibroBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Text="ID del "/><Run Language="es-mx" Text="usuario"/><LineBreak/><Run Language="es-mx"/></TextBlock>
+        <TextBox x:Name="txtIdUsuario" HorizontalAlignment="Left" Margin="19,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="161,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Text="ID del "/><Run Language="es-mx" Text="prestamo"/><LineBreak/><Run Language="es-mx"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="txtIdPrestamo" HorizontalAlignment="Left" Margin="158,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="308,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-mx" Text="Monto"/></TextBlock>
+        <TextBox x:Name="txtIdMonto" HorizontalAlignment="Left" Margin="305,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="rPresbtn" Content="Realizar sancion" HorizontalAlignment="Left" Margin="161,202,0,0" VerticalAlignment="Top" FontSize="18" Click="rPresbtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Text="Realizar "/><Run Language="es-mx" Text="sancion"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="24,269,0,0" TextWrapping="Wrap" Text="ID del usuario" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtBusqueda" HorizontalAlignment="Left" Margin="24,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buscarbtn" Content="Buscar" HorizontalAlignment="Left" Margin="50,315,0,0" VerticalAlignment="Top" FontSize="18" Click="buscarbtn_Click"/>
+        <DataGrid x:Name="dgsanc" HorizontalAlignment="Left" Height="150" Margin="464,251,0,0" VerticalAlignment="Top" Width="298" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Window>

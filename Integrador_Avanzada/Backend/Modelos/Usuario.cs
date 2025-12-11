@@ -12,6 +12,6 @@ namespace Integrador_Avanzada.Backend.Modelos
         public string nombreUsuario { get; set; }
         public int registroUsuario { get; set; }
         public string correoUsuario { get; set; }
-        public int telefonoUsuario { get; set; }
+        public string telefonoUsuario { get; set; }
     }
 }

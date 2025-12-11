@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Integrador_Avanzada.Backend.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,6 +64,37 @@ namespace Integrador_Avanzada
             irHome.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irHome.Show();
+        }
+
+        private void rPresbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int usuarioId;
+            string nombre;
+            string correo;
+            string telefono;
+
+            if (int.TryParse(txtIdUsuario.Text, out usuarioId) )
+            {
+                nombre = txtNombre.Text;
+                correo = txtCorreo.Text;
+                telefono = txtTel.Text;
+
+                UsuarioService userService = new UsuarioService();
+                userService.agregarUsuario(nombre,usuarioId, correo, telefono);
+
+                MessageBox.Show("Usuario registrado con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID de usuario y un número de teléfono válidos (solo números).");
+            }
+        }
+
+        private void rVerbtn_Click(object sender, RoutedEventArgs e)
+        {
+            UsuarioService userservice = new UsuarioService();
+            List<UsuarioModel> lista = userservice.consultarUsuarios();
+            dguser.ItemsSource = lista;
         }
     }
 }

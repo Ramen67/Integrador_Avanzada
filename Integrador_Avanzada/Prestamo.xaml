@@ -23,7 +23,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="418,120,0,0" TextWrapping="Wrap" Text="ID del prestamo" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="txtPresbtn" HorizontalAlignment="Left" Margin="418,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnDevol" Content="Devolver prestamo" HorizontalAlignment="Left" Margin="416,170,0,0" VerticalAlignment="Top" FontSize="18" Click="btnDevol_Click"/>
-        <DataGrid x:Name="dgPrestamo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="295,269,65,65" />
+        <DataGrid x:Name="dgPrestamo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="295,269,65,65"  />
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Bucar prestamos por usuario" VerticalAlignment="Center" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,269,0,0" TextWrapping="Wrap" Text="ID del usuario" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="txtBusqueda" HorizontalAlignment="Left" Margin="24,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

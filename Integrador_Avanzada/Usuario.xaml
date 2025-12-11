@@ -13,6 +13,17 @@
         <Button x:Name="SancionesBtn" Content="Sanciones" HorizontalAlignment="Left" Margin="440,20,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Click="SancionesBtn_Click" Background="#FFF8AF23" />
         <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="320,20,0,0" VerticalAlignment="Top" Width="105" Height="46" FontSize="20" Background="#FFF8AF23" Click="EjemplarBtn_Click"/>
         <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="105" Height="45" FontSize="20" Background="#FFF8AF23" Click="LibroBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-mx" Text="Registro "/><Run Text="del "/><Run Text="usuario"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="txtIdUsuario" HorizontalAlignment="Left" Margin="171,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="rPresbtn" Content="Registrar usuario" HorizontalAlignment="Left" Margin="161,313,0,0" VerticalAlignment="Top" FontSize="18" Click="rPresbtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-mx" Text="Nombre"/></TextBlock>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="171,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-mx" Text="Correo"/></TextBlock>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="171,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-mx" Text="Telefono"/></TextBlock>
+        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Margin="171,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="19"/>
+        <DataGrid x:Name="dguser" HorizontalAlignment="Left" Height="167" Margin="440,141,0,0" VerticalAlignment="Top" Width="225" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="rVerUsuario" Content="Ver usuario" HorizontalAlignment="Left" Margin="506,362,0,0" VerticalAlignment="Top" FontSize="18" Click="rVerbtn_Click"/>
 
     </Grid>
 </Window>
