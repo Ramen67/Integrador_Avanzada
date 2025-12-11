@@ -126,8 +126,12 @@ namespace Integrador_Avanzada.Backend.Servicios
                                 libroTitulo = reader.GetString(reader.GetOrdinal("titulo")),
                                 libroISBN = reader.GetString(reader.GetOrdinal("isbn")),
                                 libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion")),
-                                libroAutor = reader.GetString(4),
-                                libroEditorial = reader.GetString(5)
+                                libroAutor = reader.IsDBNull(4)
+                   ? string.Empty // O puedes usar "N/A" o null (si libroAutor permite null)
+                   : reader.GetString(4),
+                                libroEditorial = reader.IsDBNull(5)
+                   ? string.Empty // O puedes usar "N/A" o null (si libroAutor permite null)
+                   : reader.GetString(5)
                             });
                         }
                     }

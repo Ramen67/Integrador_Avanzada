@@ -37,7 +37,7 @@ namespace Integrador_Avanzada.Backend.Servicios
                 conn.Open();
 
                 string sql = @"
-                        DELETE * FROM editoriales
+                        DELETE FROM editoriales
                         WHERE editorial_id = @id";
 
                 using (var cmd = new SqlCommand(sql, conn))
