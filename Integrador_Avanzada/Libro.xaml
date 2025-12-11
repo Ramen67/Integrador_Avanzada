@@ -12,8 +12,19 @@
         <Button x:Name="UsuarioBtn" Content="Usuario" HorizontalAlignment="Left" Margin="715,20,0,0" VerticalAlignment="Top" Width="70" Height="45" FontSize="20" Background="#FFF8AF23" Click="UsuarioBtn_Click"/>
         <Button x:Name="SancionesBtn" Content="Sanciones" HorizontalAlignment="Left" Margin="482,20,0,0" VerticalAlignment="Top" Width="105" Height ="45" FontSize="20" Click="SancionesBtn_Click" Background="#FFF8AF23" />
         <Button x:Name="EjemplarBtn" Content="Ejemplar" HorizontalAlignment="Left" Margin="362,20,0,0" VerticalAlignment="Top" Width="105" Height="46" FontSize="20" Background="#FFF8AF23" Click="EjemplarBtn_Click"/>
-        <Button x:Name="LibroBtn" Content="Libro" HorizontalAlignment="Left" Margin="272,20,0,0" VerticalAlignment="Top" Width="75" Height="45" FontSize="20" Background="#FFF8AF23" Click="LibroBtn_Click"/>
+        <Button x:Name="EditorialBtn" Content="Editorial" HorizontalAlignment="Left" Margin="272,20,0,0" VerticalAlignment="Top" Width="75" Height="45" FontSize="20" Background="#FFF8AF23" Click="EditorialBtn_Click"/>
         <Button x:Name="AutorBtn" Content="Autor" HorizontalAlignment="Left" Margin="189,20,0,0" VerticalAlignment="Top" Width="72" Height="45" FontSize="20" Background="#FFF8AF23" Click="AutorBtn_Click" />
-        <Button Content="Button" HorizontalAlignment="Left" Height="39" Margin="93,331,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,120,0,0" TextWrapping="Wrap" Text="Titulo" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtIdTitulo" HorizontalAlignment="Left" Margin="24,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="rPresbtn" Content="Agregar Libro" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" FontSize="18" Click="rPresbtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,178,0,0" TextWrapping="Wrap" Text="ISBN" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtISBN" HorizontalAlignment="Left" Margin="25,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,228,0,0" TextWrapping="Wrap" Text="Año" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtA" HorizontalAlignment="Left" Margin="25,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dgbook" HorizontalAlignment="Left" Height="177" Margin="400,131,0,0" VerticalAlignment="Top" Width="229" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="rDelbtn" Content="Eliminar Libro" HorizontalAlignment="Left" Margin="188,196,0,0" VerticalAlignment="Top" FontSize="18" Click="rDelbtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,130,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="190,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="rVerbtn" Content="Ver Libro" HorizontalAlignment="Left" Margin="302,339,0,0" VerticalAlignment="Top" FontSize="18" Click="rVerbtn_Click"/>
     </Grid>
 </Window>

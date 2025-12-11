@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Integrador_Avanzada.Backend.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,7 +17,7 @@ using System.Windows.Shapes;
 
 namespace Integrador_Avanzada
 {
-    /// <summary>
+    /// <summary>   
     /// Lógica de interacción para Libro.xaml
     /// </summary>
     public partial class Libro : Window
@@ -70,12 +73,43 @@ namespace Integrador_Avanzada
             irAutores.Show();
         }
 
-        private void LibroBtn_Click(object sender, RoutedEventArgs e)
+        private void EditorialBtn_Click(object sender, RoutedEventArgs e)
         {
-            Libro irLibro = new Libro();
-            irLibro.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            Editoriales irEditoriales = new Editoriales();
             this.Close();
-            irLibro.Show();
+            irEditoriales.Show();
+        }
+
+        private void rPresbtn_Click(object sender, RoutedEventArgs e)
+        {
+            string txtTitulo;
+            string txISBN;
+            int year;
+            if(int.TryParse(txtA.Text, out year))
+            {
+                txtTitulo = txtIdTitulo.Text;
+                txISBN = txtISBN.Text;
+                LibroService libroservice = new LibroService();
+                libroservice.agregarLibro(txtTitulo,txISBN,year);
+
+            }
+        }
+
+        private void rDelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int ID;
+            if(int.TryParse(txtId.Text, out ID))
+            {
+                LibroService libroservice = new LibroService();
+                libroservice.eliminarLibro(ID);
+            }
+        }
+
+        private void rVerbtn_Click(object sender, RoutedEventArgs e)
+        {
+            LibroService libroservice = new LibroService();
+            List<LibroModel> lista = libroservice.obtenerTodosLosLibros();
+            dgbook.ItemsSource = lista;
         }
     }
 }
