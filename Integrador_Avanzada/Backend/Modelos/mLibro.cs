@@ -12,5 +12,7 @@ namespace Integrador_Avanzada.Backend.Modelos
         public string libroTitulo { get; set; }
         public string libroISBN { get; set; }
         public int libroAPublicacion { get; set; }
+        public string libroAutor { get; set; }
+        public string libroditorial { get; set; }
     }
 }

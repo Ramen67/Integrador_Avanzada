@@ -73,7 +73,7 @@ namespace Integrador_Avanzada
         private void LibroBtn_Click(object sender, RoutedEventArgs e)
         {
             Libro irLibro = new Libro();
-            irLibro.WindowStartupLocation= WindowStartupLocation.CenterScreen;
+            irLibro.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irLibro.Show();
         }

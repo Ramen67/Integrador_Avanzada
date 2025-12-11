@@ -96,7 +96,18 @@ namespace Integrador_Avanzada.Backend.Servicios
             {
                 conn.Open();
 
-                string sql = "SELECT * FROM libros"; // Trae todas las columnas
+                string sql = @"SELECT 
+                            libros.libro_id, 
+                            libros.titulo,
+                            libros.isbn,    
+                            libros.anio_publicacion,
+                            autor_libro.autor_id,
+                            libro_editorial.editorial_id
+                            FROM libros 
+                            INNER JOIN autor_libro
+                            ON libros.libro_id = autor_libro.libro_id
+                            INNER JOIN libro_editorial 
+                            ON libros.libro_id = libro_editorial.libro_id"; // Trae todas las columnas
 
                 using (var cmd = new SqlCommand(sql, conn))
                 {
@@ -109,7 +120,9 @@ namespace Integrador_Avanzada.Backend.Servicios
                                 libroId = reader.GetInt32(reader.GetOrdinal("libro_id")),
                                 libroTitulo = reader.GetString(reader.GetOrdinal("titulo")),
                                 libroISBN = reader.GetString(reader.GetOrdinal("isbn")),
-                                libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion"))
+                                libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion")),
+                                libroAutor = reader.GetString(4),
+                                libroEditorial = reader.GetString(5)
                             });
                         }
                     }
