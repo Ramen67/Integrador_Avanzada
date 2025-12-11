@@ -39,27 +39,6 @@ namespace Integrador_Avanzada
         private void DevolucionBtn_Click(object sender, RoutedEventArgs e)
         {
             Devolucion irDevolucion = new Devolucion();
-
-            try
-            {
-                using (var con = Database.GetConnection())
-                {
-                    con.Open(); // ← aquí truena si el ConnectionString está mal
-                    MessageBox.Show("Conexión exitosa.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al conectar con la base de datos:\n\n" + ex.Message,
-                    "Error",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error
-                );
-            }
-
-
-
             this.Close();
             irDevolucion.Show();
         }*/
@@ -80,6 +59,25 @@ namespace Integrador_Avanzada
 
         private void LibroBtn_Click(object sender, RoutedEventArgs e)
         {
+            /* Conexion a la base de datos de prueba
+             * usala en todas las ventanas
+            try
+            {
+                using (var con = Database.GetConnection())
+                {
+                    con.Open(); // ← aquí truena si el ConnectionString está mal
+                    MessageBox.Show("Conexión exitosa.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al conectar con la base de datos:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            }*/
             Libro irLibro = new Libro();
             this.Close();
             irLibro.Show();

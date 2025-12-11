@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Integrador_Avanzada.Backend.Modelos;
+using Integrador_Avanzada.Backend.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,6 +58,51 @@ namespace Integrador_Avanzada
             Usuario irUsuario = new Usuario();
             this.Close();
             irUsuario.Show();
+        }
+
+        private void rPresbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int ejemplarId;
+            int usuarioId;
+            if (int.TryParse(txtIdEjemplar.Text, out ejemplarId) && int.TryParse(txtIdUsuario.Text, out usuarioId))
+            {
+                PrestamoService prestamoService = new PrestamoService();
+                prestamoService.RealizarPrestamo(ejemplarId, usuarioId);
+                MessageBox.Show("Préstamo realizado con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese IDs válidos para el ejemplar y el usuario.");
+            }
+        }
+
+        private void buscarbtn_Click(object sender, RoutedEventArgs e)
+        {
+            int idUsuario;
+            if (!int.TryParse(txtBusqueda.Text, out idUsuario))
+            {
+                MessageBox.Show("Por favor, ingrese un ID de usuario válido.");
+                return;
+            }
+            PrestamoService model = new PrestamoService();
+            List<PrestamoModel> prestamos;
+            prestamos = model.BuscarPrestamosPorUsuario(idUsuario);
+            dgPrestamo.ItemsSource = prestamos;
+        }
+
+        private void btnDevol_Click(object sender, RoutedEventArgs e)
+        {
+            int prestamoId;
+            if (int.TryParse(txtPresbtn.Text, out prestamoId))
+            {
+                PrestamoService prestamoService = new PrestamoService();
+                prestamoService.DevolverPrestamo(prestamoId);
+                MessageBox.Show("Devolución realizada con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID de préstamo válido.");
+            }
         }
     }
 }
