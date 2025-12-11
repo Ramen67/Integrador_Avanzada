@@ -23,10 +23,13 @@ namespace Integrador_Avanzada
     public partial class FiltroLibro : Window
     {
         LibroService libroser = new LibroService();
-        List<LibroModel> lista = libroser.obtenerTodosLosLibros();
+        List<LibroModel> lista;
         public FiltroLibro()
         {
+
+            lista = libroser.obtenerTodosLosLibros();
             InitializeComponent();
+            dgBook.ItemsSource = lista;
         }
 
         private void UsuarioBtn_Click(object sender, RoutedEventArgs e)
@@ -82,5 +85,26 @@ namespace Integrador_Avanzada
             irEditoriales.Show();
         }
 
+        private void rPresbtn_Click(object sender, RoutedEventArgs e)
+        {
+            string autor = txtAutor.Text;
+            if (string.IsNullOrEmpty(autor))
+            {
+                MessageBox.Show("Vacio");
+            }
+            var libros =from b in lista where b.libroAutor==autor select b;
+            dgBook.ItemsSource = libros;
+        }
+
+        private void rEditorialbtn_Click(object sender, RoutedEventArgs e)
+        {
+            string editorial = txtEditorial.Text;
+            if (string.IsNullOrEmpty(editorial))
+            {
+                MessageBox.Show("Vacio");
+            }
+            var libros = from libro in lista where libro.libroEditorial==editorial select libro;
+            dgBook.ItemsSource = libros;
+        }
     }
 }

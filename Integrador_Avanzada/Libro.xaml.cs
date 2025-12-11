@@ -111,5 +111,12 @@ namespace Integrador_Avanzada
             List<LibroModel> lista = libroservice.obtenerTodosLosLibros();
             dgbook.ItemsSource = lista;
         }
+
+        private void FiltroBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FiltroLibro irfiltro = new FiltroLibro();
+            this.Close();
+            irfiltro.Show();
+        }
     }
 }

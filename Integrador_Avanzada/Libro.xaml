@@ -26,5 +26,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="190,130,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="190,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="rVerbtn" Content="Ver Libro" HorizontalAlignment="Left" Margin="302,339,0,0" VerticalAlignment="Top" FontSize="18" Click="rVerbtn_Click"/>
+        <Button x:Name="FiltroBtn" Content="Filtro" HorizontalAlignment="Left" Margin="107,20,0,0" VerticalAlignment="Top" Width="72" Height="45" FontSize="20" Background="#FFF8AF23" Click="FiltroBtn_Click" />
     </Grid>
 </Window>
