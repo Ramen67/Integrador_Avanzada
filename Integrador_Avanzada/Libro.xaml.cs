@@ -63,5 +63,19 @@ namespace Integrador_Avanzada
             this.Close();
             irHome.Show();
         }
+        private void AutorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Autores irAutores = new Autores();
+            this.Close();
+            irAutores.Show();
+        }
+
+        private void LibroBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Libro irLibro = new Libro();
+            irLibro.WindowStartupLocation= WindowStartupLocation.CenterScreen;
+            this.Close();
+            irLibro.Show();
+        }
     }
 }

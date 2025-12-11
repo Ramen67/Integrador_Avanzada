@@ -88,5 +88,33 @@ namespace Integrador_Avanzada.Backend.Servicios
 
             return libros;
         }
+        public List<LibroModel> obtenerTodosLosLibros()
+        {
+            var libros = new List<LibroModel>();
+
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+
+                string sql = "SELECT * FROM libros"; // Trae todas las columnas
+
+                using (var cmd = new SqlCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        libros.Add(new LibroModel
+                        {
+                            libroId = reader.GetInt32(reader.GetOrdinal("libro_id")),
+                            libroTitulo = reader.GetString(reader.GetOrdinal("titulo")),
+                            libroISBN = reader.GetString(reader.GetOrdinal("isbn")),
+                            libroAPublicacion = reader.GetInt32(reader.GetOrdinal("anio_publicacion"))
+                        });
+                    }
+                }
+            }
+            return libros;
+        }
+
     }
 }
