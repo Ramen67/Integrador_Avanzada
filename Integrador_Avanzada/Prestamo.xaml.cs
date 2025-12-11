@@ -29,6 +29,7 @@ namespace Integrador_Avanzada
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow Home = new MainWindow();
+            Home.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             Home.Show();
         }
@@ -36,12 +37,14 @@ namespace Integrador_Avanzada
         private void SancionesBtn_Click(object sender, RoutedEventArgs e)
         {
             Sanciones irSanciones = new Sanciones();
+            irSanciones.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irSanciones.Show();
         }
         private void LibroBtn_Click(object sender, RoutedEventArgs e)
         {
             Libro irLibro = new Libro();
+            irLibro.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irLibro.Show();
         }
@@ -49,6 +52,7 @@ namespace Integrador_Avanzada
         private void EjemplarBtn_Click(object sender, RoutedEventArgs e)
         {
             Ejemplar irEjemplar = new Ejemplar();
+            irEjemplar.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irEjemplar.Show();
         }
@@ -56,6 +60,7 @@ namespace Integrador_Avanzada
         private void UsuarioBtn_Click(object sender, RoutedEventArgs e)
         {
             Usuario irUsuario = new Usuario();
+            irUsuario.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irUsuario.Show();
         }

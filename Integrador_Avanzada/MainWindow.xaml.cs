@@ -20,11 +20,13 @@ namespace Integrador_Avanzada
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void SancionesBtn_Click(object sender, RoutedEventArgs e)
         {
             Sanciones irSanciones = new Sanciones();
+            irSanciones.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irSanciones.Show();
         }
@@ -32,6 +34,7 @@ namespace Integrador_Avanzada
         private void PrestamoBtn_Click(object sender, RoutedEventArgs e)
         {
             Prestamo irPrestamo = new Prestamo();
+            irPrestamo.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irPrestamo.Show();
         }
@@ -46,6 +49,7 @@ namespace Integrador_Avanzada
         private void UsuarioBtn_Click(object sender, RoutedEventArgs e)
         {
             Usuario irUsuario = new Usuario();
+            irUsuario.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irUsuario.Show();
         }
@@ -53,6 +57,7 @@ namespace Integrador_Avanzada
         private void EjemplarBtn_Click(object sender, RoutedEventArgs e)
         {
             Ejemplar irEjemplar = new Ejemplar();
+            irEjemplar.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irEjemplar.Show();
         }
@@ -60,7 +65,6 @@ namespace Integrador_Avanzada
         private void LibroBtn_Click(object sender, RoutedEventArgs e)
         {
             /* Conexion a la base de datos de prueba
-             * usala en todas las ventanas
             try
             {
                 using (var con = Database.GetConnection())
@@ -79,6 +83,7 @@ namespace Integrador_Avanzada
                 );
             }*/
             Libro irLibro = new Libro();
+            irLibro.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Close();
             irLibro.Show();
         }
